@@ -1,0 +1,24 @@
+{
+    "name": "Crucible.Editor",
+    "rootNamespace": "Crucible.Editor",
+    "references": [
+        "Crucible.Core",
+        "Crucible.Sim",
+        "Crucible.Gameplay",
+        "Crucible.Diagnostics",
+        "Unity.Burst",
+        "Unity.Collections",
+        "Unity.Mathematics"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

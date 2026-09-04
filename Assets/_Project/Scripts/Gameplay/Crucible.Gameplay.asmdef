@@ -1,0 +1,21 @@
+{
+    "name": "Crucible.Gameplay",
+    "rootNamespace": "Crucible.Gameplay",
+    "references": [
+        "Crucible.Core",
+        "Crucible.Sim",
+        "Unity.Burst",
+        "Unity.Collections",
+        "Unity.Mathematics",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

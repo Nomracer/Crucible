@@ -1,0 +1,22 @@
+{
+    "name": "Crucible.Diagnostics",
+    "rootNamespace": "Crucible.Diagnostics",
+    "references": [
+        "Crucible.Core",
+        "Crucible.Sim",
+        "Unity.Burst",
+        "Unity.Collections",
+        "Unity.Mathematics",
+        "Unity.Profiling.Core",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

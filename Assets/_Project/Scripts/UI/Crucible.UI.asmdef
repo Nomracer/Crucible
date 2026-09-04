@@ -1,0 +1,21 @@
+{
+    "name": "Crucible.UI",
+    "rootNamespace": "Crucible.UI",
+    "references": [
+        "Crucible.Core",
+        "Crucible.Gameplay",
+        "Crucible.Sim",
+        "Unity.Mathematics",
+        "Unity.InputSystem",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
