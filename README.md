@@ -1,6 +1,6 @@
 # Crucible
 
-A falling-sand alchemy puzzle for Android, built as a mobile performance engineering study.
+A falling-sand alchemy puzzle for Android and iOS, built as a mobile performance engineering study.
 
 Sand piles. Water finds its level. Fire jumps to anything flammable. Lava turns to stone on contact with water, and turns sand into glass. Each level gives you fixed geometry, a limited budget of materials, and a target: fill the marked region with a given material and keep it stable for one second.
 
@@ -68,7 +68,7 @@ The build ships a diagnostic overlay with runtime A/B switches for chunking, job
 | M6 | Flow control: pause, frame step, snapshot ring, rewind | |
 | M7 | Level system, budgets, goal checking, level editor | |
 | M8 | UI and diagnostic overlay | |
-| M9 | Android build, on-device profiling | |
+| M9 | Android and iOS builds, on-device profiling | |
 | M10 | 24 levels and sandbox mode | |
 
 ---
@@ -77,7 +77,7 @@ The build ships a diagnostic overlay with runtime A/B switches for chunking, job
 
 Unity `6000.3.10f1`, URP 17.3.0, 2D Renderer. Open the project folder in Unity Hub and let the package manager resolve; there is no other setup step.
 
-Player settings are configured for Android: IL2CPP, ARM64 only, portrait, medium managed stripping, minimum SDK 24.
+Player settings are configured for mobile: IL2CPP, ARM64 only, portrait, medium managed stripping. Android minimum SDK 24; iOS minimum 15.0, Metal only.
 
 ## Layout
 

@@ -44,3 +44,6 @@ Thumbs.db
 # Crash reports
 sysinfo.txt
 crashlytics-build.properties
+
+# Local-only: agent working instructions, never published
+CLAUDE.md

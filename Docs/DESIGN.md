@@ -1,7 +1,7 @@
 # Crucible — Tasarım Dokümanı
 
 **Tür:** 2D falling-sand / hücresel otomat bulmaca
-**Platform:** Android (orta segment hedef), portre
+**Platform:** Android + iOS (orta segment hedef), portre
 **Motor:** Unity 6000.3.10f1, URP 2D Renderer
 **Amaç:** Mobil performans mühendisliğini gösteren portfolyo projesi
 
@@ -286,7 +286,7 @@ Ayrı assembly definition'lar bilinçli: `Sim` üzerinde çalışırken sadece `
 | M6 | Akış kontrolü | Duraklat, kare ilerlet, anlık görüntü halkası, geri sarma |
 | M7 | Bölüm sistemi | Bölüm verisi, bütçe, hedef kontrolü, editör aracı, 8 bölüm |
 | M8 | UI + tanılama | Palet, HUD, katman, A/B anahtarları, RLE sıkıştırma ölçümü |
-| M9 | Cihaz | Android derlemesi, cihaz üzerinde profilleme, README tabloları |
+| M9 | Cihaz | Android ve iOS derlemeleri, cihaz üzerinde profilleme, README tabloları |
 | M10 | İçerik | 24 bölüm + serbest mod |
 
 M1–M4 teknik omurga; portfolyo değerinin çoğu orada. M5–M10 onu oynanabilir bir şeye dönüştürür.
