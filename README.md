@@ -6,7 +6,7 @@ Sand piles. Water finds its level. Fire jumps to anything flammable. Lava turns 
 
 The game is the vehicle. The point is what it takes to run a 147,000-cell cellular automaton at 60 fps on a mid-range Android phone.
 
-**Status:** early. Project scaffolding and design are done; the simulation is not written yet. See the roadmap below.
+**Status:** M1 done. Sand falls, piles and settles; the grid renders in one draw call; the simulation and paint stages allocate nothing. The editor baseline is recorded. The device baseline is not — that is the number the project is actually about, and it stays `—` until a phone produces it. See the roadmap below.
 
 ---
 
@@ -42,7 +42,9 @@ If the budget is exceeded, the simulation drops from 60 Hz to 30 Hz. Grid resolu
 
 ## Measurements
 
-Not yet taken. This table gets filled from real device captures on a fixed reference scene, one row per milestone. No estimated numbers will be entered here.
+Two tables, never mixed. The device table is the one the performance claim rests on, and it is empty until a phone fills it. No estimated numbers are entered anywhere.
+
+**Device — mid-range Android.** Not captured yet.
 
 | Configuration | Sim ms | Frame ms | FPS |
 |---|---|---|---|
@@ -50,6 +52,19 @@ Not yet taken. This table gets filled from real device captures on a fixed refer
 | + chunking and dirty rects | — | — | — |
 | + Burst | — | — | — |
 | + parallel jobs | — | — | — |
+
+**Editor reference.** Ryzen 7 7800X3D, RTX 5070 Ti, D3D12, 384 × 832 (319,488 cells), Unity editor play mode, Mono. This exists only so successive milestones have a same-machine comparison; it says nothing about mobile.
+
+| Configuration | Sim avg | Sim p95 | Paint avg | Upload avg |
+|---|---|---|---|---|
+| M1 — naive: single-threaded, no chunking | 5.72 ms | 6.07 ms | 4.98 ms | 0.06 ms |
+| + chunking and dirty rects | — | — | — | — |
+| + Burst | — | — | — | — |
+| + parallel jobs | — | — | — | — |
+
+Paint is already 2.5× over its 2.0 ms budget at M1, which makes `GridPainter` the clearest Burst target. Steady-state GC allocation in the simulation and paint stages is 0 B, measured in isolation — Unity's per-frame counter cannot be trusted in the editor, since it reports a larger figure with the game driver disabled entirely.
+
+Full capture context, including why the editor GC counter is unusable, is in [`Docs/MEASUREMENTS.md`](Docs/MEASUREMENTS.md).
 
 The build ships a diagnostic overlay with runtime A/B switches for chunking, jobs, and Burst, so the difference each optimization makes can be toggled and observed on the device rather than argued about.
 
@@ -60,7 +75,7 @@ The build ships a diagnostic overlay with runtime A/B switches for chunking, job
 | # | Milestone | Status |
 |---|---|---|
 | M0 | Project scaffolding, assemblies, mobile settings | done |
-| M1 | Grid, texture rendering, brush input — deliberately naive, for the baseline capture | next |
+| M1 | Grid, texture rendering, brush input — deliberately naive, for the baseline capture | editor baseline done, device baseline pending |
 | M2 | Material rules: powder, liquid, gas, solid; reaction table | |
 | M3 | Chunking and dirty rects | |
 | M4 | Burst and parallel jobs | |
