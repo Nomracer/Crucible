@@ -47,3 +47,7 @@ crashlytics-build.properties
 
 # Local-only: agent working instructions, never published
 CLAUDE.md
+
+# Local-only: line-by-line learning notes, never published
+Docs/ogrenme-notlari/
+Assets/Screenshots/
