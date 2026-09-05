@@ -174,6 +174,18 @@ namespace Crucible.Gameplay
 
         private void OnApplicationFocus(bool focused)
         {
+            // On device this is a real signal: a permission dialog or a split-screen focus loss
+            // should stop the simulation the same way backgrounding does.
+            //
+            // In the editor it means something else entirely — it fires whenever the Unity window
+            // loses focus, so clicking the Profiler or the Frame Debugger would freeze the
+            // simulation at exactly the moment a capture is being taken. Measurement is the point
+            // of this project, so the editor case is ignored rather than worked around.
+            if (Application.isEditor)
+            {
+                return;
+            }
+
             _paused = !focused;
             _accumulator = 0f;
         }
